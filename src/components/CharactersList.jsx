@@ -6,11 +6,11 @@ export function CharactersList({ characters = [] }) {
     <ul id="characters">
       {characters.map((character) => {
         // Récupérer la date de chaque personnage
-        const isoDate = character.modified;
+        const UpDate = character.modified;
         
         // Vérifier si la date est valide et la formater
-        const dateObj = parseISO(isoDate);
-        const justDate = isValid(dateObj) ? format(dateObj, 'MMM dd, yyyy') : 'Date inconnue';
+        const laDate = parseISO(UpDate);
+        const NewDate = isValid(laDate) ? format(laDate, 'MMM dd, yyyy') : 'Date inconnue';
 
         return (
           <li key={character.id}>
@@ -19,7 +19,7 @@ export function CharactersList({ characters = [] }) {
                 {character.name}
               </Link>
             </strong>
-            <small> {justDate}</small> {/* Afficher la date formatée */}
+            <small> {NewDate}</small> {/* Afficher la date formatée */}
           </li>
         );
       })}

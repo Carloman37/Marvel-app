@@ -6,11 +6,11 @@ function CharacterDetail({ character = {} }) {
         return <div>No character</div>;
     } else {
         // if character is provided, then render the character details
-        const isoDate = character.modified;
+        const UpDate = character.modified;
         
         // Vérifier si la date est valide
-        const dateObj = parseISO(isoDate);
-        const justDate = isValid(dateObj) ? format(dateObj, 'MMM dd, yyyy') : 'Date inconnue';
+        const laDate = parseISO(UpDate);
+        const NewDate = isValid(laDate) ? format(laDate, 'MMM dd, yyyy') : 'Date inconnue';
 
         return (
             <div>
@@ -20,7 +20,7 @@ function CharacterDetail({ character = {} }) {
                     character.thumbnail && <img src={`${character.thumbnail.path}/standard_large.${character.thumbnail.extension}`} alt={character.name} />
                 }
                 <p>{character.description}</p>
-                <p>{justDate}</p>
+                <p>{NewDate}</p>
             </div>
         );
     }
